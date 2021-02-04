@@ -1,0 +1,24 @@
+<h1 id="tableLabel">Weather forecast</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<p *ngIf="!housings"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="housings">
+  <thead>
+    <tr>
+      <th>Link</th>
+      <th>Price (lei / month)</th>
+      <th>Number Of Rooms</th>
+      <th>Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let housing of housings">
+      <td><a href = {{housing.link}}>{{ housing.link }}</a></td>
+      <td>{{ housing.price }}</td>
+      <td>{{ housing.noOfRooms }}</td>
+      <td>{{ housing.location }}</td>
+    </tr>
+  </tbody>
+</table>
